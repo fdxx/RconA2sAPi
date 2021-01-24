@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 @Slf4j
 @RestController
 public class ApiController {
@@ -27,7 +29,7 @@ public class ApiController {
         return new Json(false, "致命错误:参数缺失!!!");
     }
 
-
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/players", produces = "application/json;charset=UTF-8")
     public Json getPlayers(@RequestBody Map<String, String> map) {
 
@@ -37,7 +39,7 @@ public class ApiController {
         return new Json(false, "致命错误:参数缺失!!!");
     }
 
-
+    @CrossOrigin(origins = "*")
     @PostMapping(value = "/servers", produces = "application/json;charset=UTF-8")
     public Json getServers(@RequestBody Map<String, String> map) {
 
