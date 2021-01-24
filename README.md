@@ -82,3 +82,19 @@ java -Dfile.encoding=utf-8 -jar valveapi-0.0.1-SNAPSHOT.jar --server.port=9090
    - - - name为玩家姓名
    - - - score为玩家当前得分
    - - - time为玩家在线时长，单位秒
+
+## 编译
+
+需要先安装JDK15
+
+```bash
+cd RconA2sAPi
+chmod +x ./mvnw
+./mvnw clean install
+```
+
+## 使用 pm2 后台运行
+
+```bash
+pm2 start java -n rconA2sAPi -- "-jar ./valveapi-1.0.3.RELEASE.jar --server.port=9090"
+```
